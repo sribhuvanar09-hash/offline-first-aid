@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0f766e"
+    >
+
+    <meta
+        name="description"
+        content="Offline First Aid - quick first-aid guidance for common situations."
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <title>Offline First Aid</title>
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+<!-- =========================================================
+     PAGE LOADER
+========================================================= -->
+
+<div
+    id="pageLoader"
+    class="page-loader"
+    aria-hidden="true"
+>
+    <div class="loader-ring"></div>
+
+    <p>Preparing First Aid...</p>
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="header-container">
+
+        <a
+            href="#home"
+            class="brand"
+            aria-label="Offline First Aid Home"
+        >
+
+            <span class="brand-icon">🩹</span>
+
+            <span class="brand-text">
+                <strong>Offline First Aid</strong>
+                <small>Help when you need it</small>
+            </span>
+
+        </a>
+
+
+        <nav
+            id="mainNav"
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+
+            <a
+                href="#home"
+                onclick="closeMenu()"
+            >
+                Home
+            </a>
+
+            <a
+                href="#guides"
+                onclick="closeMenu()"
+            >
+                Guides
+            </a>
+
+            <a
+                href="#quick-find"
+                onclick="closeMenu()"
+            >
+                Quick Find
+            </a>
+
+            <a
+                href="#safety"
+                onclick="closeMenu()"
+            >
+                Safety Tips
+            </a>
+
+            <a
+                href="#kit"
+                onclick="closeMenu()"
+            >
+                First-Aid Kit
+            </a>
+
+            <a
+                href="#favorites"
+                onclick="closeMenu()"
+            >
+                Favorites
+            </a>
+
+            <a
+                href="#quiz"
+                onclick="closeMenu()"
+            >
+                Quiz
+            </a>
+
+            <a
+                href="#about"
+                onclick="closeMenu()"
+            >
+                About
+            </a>
+
+        </nav>
+
+
+        <div class="header-actions">
+
+            <button
+                id="themeToggle"
+                class="icon-button"
+                type="button"
+                aria-label="Toggle dark mode"
+                title="Toggle theme"
+            >
+                🌙
+            </button>
+
+
+            <button
+                id="installButton"
+                class="install-button"
+                type="button"
+                hidden
+            >
+                📲 Install
+            </button>
+
+
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                onclick="toggleMenu()"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     CONNECTION STATUS
+========================================================= -->
+
+<div
+    id="connectionStatus"
+    class="connection-status"
+    role="status"
+    aria-live="polite"
+>
+    <span class="status-dot"></span>
+    <span id="connectionText">Checking connection...</span>
+</div>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main id="home">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero-section">
+
+    <div class="hero-background">
+
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="grid-overlay"></div>
+
+    </div>
+
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Works offline
+            </div>
+
+
+            <h1>
+                First aid guidance.
+                <span>Right when you need it.</span>
+            </h1>
+
+
+            <p class="hero-description">
+                Quick, simple and easy-to-follow first-aid information
+                for common situations — even when you are offline.
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#guides"
+                    class="primary-button"
+                >
+                    <span>Explore Guides</span>
+                    <span>→</span>
+                </a>
+
+
+                <a
+                    href="#quick-find"
+                    class="secondary-button"
+                >
+                    <span>⚡</span>
+                    Quick Find
+                </a>
+
+            </div>
+
+
+            <div class="hero-mini-info">
+
+                <div>
+                    <span>✓</span>
+                    Offline ready
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Mobile friendly
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Simple guidance
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="medical-card">
+
+                <div class="medical-card-top">
+
+                    <span class="medical-status">
+                        ● READY
+                    </span>
+
+                    <span class="medical-symbol">
+                        ✚
+                    </span>
+
+                </div>
+
+
+                <div class="medical-cross">
+                    +
+                </div>
+
+
+                <h2>
+                    Stay calm.
+                    <br>
+                    Get informed.
+                </h2>
+
+
+                <p>
+                    Find the right guide in seconds.
+                </p>
+
+
+                <div class="medical-lines">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EMERGENCY
+========================================================= -->
+
+<section class="emergency-section">
+
+    <div class="container">
+
+        <div class="emergency-card">
+
+            <div class="emergency-icon">
+                🚨
+            </div>
+
+
+            <div class="emergency-content">
+
+                <span class="section-label emergency-label">
+                    EMERGENCY
+                </span>
+
+                <h2>
+                    Serious or life-threatening situation?
+                </h2>
+
+                <p>
+                    Contact local emergency services immediately.
+                    In India, the unified emergency number is
+                    <strong>112</strong>.
+                </p>
+
+            </div>
+
+
+            <a
+                href="tel:112"
+                class="emergency-button"
+            >
+                <span>Call 112</span>
+                <span>☎</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GUIDES
+========================================================= -->
+
+<section
+    id="guides"
+    class="section guides-section"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    FIRST-AID LIBRARY
+                </span>
+
+                <h2>
+                    Common first-aid guides
+                </h2>
+
+                <p>
+                    Choose a topic to see simple first-aid guidance.
+                </p>
+
+            </div>
+
+
+            <div
+                id="guideCount"
+                class="guide-count"
+            >
+                0 guides
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <span class="search-icon">
+                🔎
+            </span>
+
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="Search first-aid guides..."
+                autocomplete="off"
+                oninput="searchGuides()"
+                aria-label="Search first-aid guides"
+            >
+
+            <button
+                id="clearSearch"
+                type="button"
+                aria-label="Clear search"
+                title="Clear search"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div
+            id="guideGrid"
+            class="guide-grid"
+        >
+            <!-- Guides are generated by JavaScript -->
+        </div>
+
+
+        <div
+            id="noResults"
+            class="no-results"
+            hidden
+        >
+
+            <div class="no-results-icon">
+                🔎
+            </div>
+
+            <h3>
+                No guide found
+            </h3>
+
+            <p>
+                Try another search term.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUICK FIND
+========================================================= -->
+
+<section
+    id="quick-find"
+    class="section quick-section"
+>
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                QUICK FIND
+            </span>
+
+            <h2>
+                What happened?
+            </h2>
+
+            <p>
+                Pick the situation that best matches what you need.
+            </p>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('deep-cut')"
+            >
+                <span>🩸</span>
+                <strong>Deep Cut</strong>
+                <small>Serious wound</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('minor-cut')"
+            >
+                <span>🩹</span>
+                <strong>Minor Cut</strong>
+                <small>Small wound</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('sprain')"
+            >
+                <span>🦶</span>
+                <strong>Sprain</strong>
+                <small>Pain or swelling</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('muscle-strain')"
+            >
+                <span>💪</span>
+                <strong>Muscle Strain</strong>
+                <small>Muscle pain</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('fracture')"
+            >
+                <span>🦴</span>
+                <strong>Possible Fracture</strong>
+                <small>Suspected broken bone</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('ankle-twist')"
+            >
+                <span>🦶</span>
+                <strong>Ankle Twist</strong>
+                <small>Twisted ankle</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('head-injury')"
+            >
+                <span>🧠</span>
+                <strong>Head Injury</strong>
+                <small>Head impact</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('eye-injury')"
+            >
+                <span>👁️</span>
+                <strong>Eye Injury</strong>
+                <small>Eye problem</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('finger-injury')"
+            >
+                <span>☝️</span>
+                <strong>Finger Injury</strong>
+                <small>Finger pain</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('foot-injury')"
+            >
+                <span>🦶</span>
+                <strong>Foot Injury</strong>
+                <small>Foot problem</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('knee-injury')"
+            >
+                <span>🦵</span>
+                <strong>Knee Injury</strong>
+                <small>Knee pain</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('abrasion')"
+            >
+                <span>🩹</span>
+                <strong>Scrape</strong>
+                <small>Skin scrape</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('bruise')"
+            >
+                <span>🟣</span>
+                <strong>Bruise</strong>
+                <small>Bruised area</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('minor-burn')"
+            >
+                <span>🔥</span>
+                <strong>Minor Burn</strong>
+                <small>Small burn</small>
+            </button>
+
+
+            <button
+                class="quick-card"
+                type="button"
+                onclick="findSituation('nose-injury')"
+            >
+                <span>👃</span>
+                <strong>Nose Injury</strong>
+                <small>Nose impact</small>
+            </button>
+
+        </div>
+
+
+        <div class="quick-emergency">
+
+            <div>
+                <strong>Can't find your situation?</strong>
+                <span>
+                    For a serious emergency, get professional help immediately.
+                </span>
+            </div>
+
+            <a
+                href="tel:112"
+                class="small-emergency-button"
+            >
+                Call 112
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SAFETY TIPS
+========================================================= -->
+
+<section
+    id="safety"
+    class="section safety-section"
+>
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                SAFETY FIRST
+            </span>
+
+            <h2>
+                Simple habits that matter
+            </h2>
+
+            <p>
+                A few basic habits can help you respond more safely.
+            </p>
+
+        </div>
+
+
+        <div class="safety-grid">
+
+            <article class="safety-card">
+
+                <div class="safety-icon">
+                    🧘
+                </div>
+
+                <h3>
+                    Stay calm
+                </h3>
+
+                <p>
+                    Pause, assess the situation and avoid unnecessary panic.
+                </p>
+
+            </article>
+
+
+            <article class="safety-card">
+
+                <div class="safety-icon">
+                    🧼
+                </div>
+
+                <h3>
+                    Keep things clean
+                </h3>
+
+                <p>
+                    Use clean hands and clean dressings whenever possible.
+                </p>
+
+            </article>
+
+
+            <article class="safety-card">
+
+                <div class="safety-icon">
+                    📞
+                </div>
+
+                <h3>
+                    Know when to call
+                </h3>
+
+                <p>
+                    Serious or worsening situations need professional medical help.
+                </p>
+
+            </article>
+
+
+            <article class="safety-card">
+
+                <div class="safety-icon">
+                    🩹
+                </div>
+
+                <h3>
+                    Protect the injury
+                </h3>
+
+                <p>
+                    Stop activities that could make an injury worse.
+                </p>
+
+            </article>
+
+
+            <article class="safety-card">
+
+                <div class="safety-icon">
+                    👀
+                </div>
+
+                <h3>
+                    Monitor symptoms
+                </h3>
+
+                <p>
+                    Watch for symptoms that become severe or change over time.
+                </p>
+
+            </article>
+
+
+            <article class="safety-card">
+
+                <div class="safety-icon">
+                    👨‍⚕️
+                </div>
+
+                <h3>
+                    Get medical advice
+                </h3>
+
+                <p>
+                    First-aid information does not replace professional medical care.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FIRST AID KIT
+========================================================= -->
+
+<section
+    id="kit"
+    class="section kit-section"
+>
+
+    <div class="container">
+
+        <div class="kit-layout">
+
+            <div class="kit-intro">
+
+                <span class="section-label">
+                    BE PREPARED
+                </span>
+
+                <h2>
+                    Build your first-aid kit
+                </h2>
+
+                <p>
+                    Keep basic supplies together so they are easier to find
+                    when needed.
+                </p>
+
+
+                <div class="kit-progress-card">
+
+                    <div class="progress-circle" id="progressCircle">
+
+                        <div class="progress-inner">
+
+                            <strong id="progressText">
+                                0%
+                            </strong>
+
+                            <small>
+                                Ready
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Kit checklist
+                        </strong>
+
+                        <p>
+                            Your progress is saved automatically on this device.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="reset-button"
+                    onclick="resetChecklist()"
+                >
+                    Reset checklist
+                </button>
+
+            </div>
+
+
+            <div class="kit-list">
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        class="kit-check"
+                        data-item="bandages"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    <span class="check-content">
+                        <strong>Adhesive bandages</strong>
+                        <small>For small cuts and scrapes</small>
+                    </span>
+
+                    <span class="check-emoji">🩹</span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        class="kit-check"
+                        data-item="gauze"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    <span class="check-content">
+                        <strong>Gauze</strong>
+                        <small>For wound dressing</small>
+                    </span>
+
+                    <span class="check-emoji">🧻</span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        class="kit-check"
+                        data-item="antiseptic"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    <span class="check-content">
+                        <strong>Antiseptic supplies</strong>
+                        <small>For basic wound care</small>
+                    </span>
+
+                    <span class="check-emoji">🧴</span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        class="kit-check"
+                        data-item="gloves"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    <span class="check-content">
+                        <strong>Disposable gloves</strong>
+                        <small>For safer first-aid care</small>
+                    </span>
+
+                    <span class="check-emoji">🧤</span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        class="kit-check"
+                        data-item="tape"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    <span class="check-content">
+                        <strong>Medical tape</strong>
+                        <small>For securing dressings</small>
+                    </span>
+
+                    <span class="check-emoji">📏</span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        class="kit-check"
+                        data-item="coldpack"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    <span class="check-content">
+                        <strong>Cold pack</strong>
+                        <small>For minor injuries</small>
+                    </span>
+
+                    <span class="check-emoji">❄️</span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        class="kit-check"
+                        data-item="scissors"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    <span class="check-content">
+                        <strong>First-aid scissors</strong>
+                        <small>For basic kit use</small>
+                    </span>
+
+                    <span class="check-emoji">✂️</span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        class="kit-check"
+                        data-item="thermometer"
+                    >
+
+                    <span class="custom-check"></span>
+
+                    <span class="check-content">
+                        <strong>Thermometer</strong>
+                        <small>For checking temperature</small>
+                    </span>
+
+                    <span class="check-emoji">🌡️</span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAVORITES
+========================================================= -->
+
+<section
+    id="favorites"
+    class="section favorites-section"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    SAVED GUIDES
+                </span>
+
+                <h2>
+                    Your favorites
+                </h2>
+
+                <p>
+                    Save guides you may want to find quickly later.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="favoritesGrid"
+            class="guide-grid favorites-grid"
+        >
+            <!-- Favorites generated by JavaScript -->
+        </div>
+
+
+        <div
+            id="noFavorites"
+            class="empty-state"
+        >
+
+            <div class="empty-icon">
+                ♡
+            </div>
+
+            <h3>
+                No favorites yet
+            </h3>
+
+            <p>
+                Open a guide and tap the heart icon to save it here.
+            </p>
+
+            <a
+                href="#guides"
+                class="secondary-button"
+            >
+                Browse guides
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUIZ
+========================================================= -->
+
+<section
+    id="quiz"
+    class="section quiz-section"
+>
+
+    <div class="container">
+
+        <div class="quiz-wrapper">
+
+            <div class="quiz-header">
+
+                <div>
+
+                    <span class="section-label">
+                        QUICK QUIZ
+                    </span>
+
+                    <h2>
+                        Test your first-aid basics
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="quizProgress"
+                    class="quiz-progress-text"
+                >
+                    Question 1 of 5
+                </div>
+
+            </div>
+
+
+            <div class="quiz-progress">
+
+                <div
+                    id="quizBar"
+                    class="quiz-bar"
+                ></div>
+
+            </div>
+
+
+            <div
+                id="quizContent"
+                class="quiz-content"
+            >
+
+                <div class="quiz-question-area">
+
+                    <span class="question-number">
+                        QUESTION
+                    </span>
+
+                    <h3 id="quizQuestion">
+                        Loading question...
+                    </h3>
+
+                </div>
+
+
+                <div
+                    id="quizOptions"
+                    class="quiz-options"
+                >
+                    <!-- Quiz options generated by JavaScript -->
+                </div>
+
+            </div>
+
+
+            <div
+                id="quizResult"
+                class="quiz-result"
+                hidden
+            >
+
+                <div class="result-icon">
+                    🎉
+                </div>
+
+                <span class="section-label">
+                    QUIZ COMPLETE
+                </span>
+
+                <h3>
+                    Your score
+                </h3>
+
+                <div
+                    id="finalScore"
+                    class="final-score"
+                >
+                    0 / 5
+                </div>
+
+                <p>
+                    Keep learning and stay prepared.
+                </p>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    onclick="restartQuiz()"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    id="about"
+    class="section about-section"
+>
+
+    <div class="container">
+
+        <div class="about-card">
+
+            <div class="about-icon">
+                🩹
+            </div>
+
+
+            <div class="about-content">
+
+                <span class="section-label">
+                    ABOUT THE PROJECT
+                </span>
+
+                <h2>
+                    Offline First Aid
+                </h2>
+
+                <p>
+                    A simple educational web application designed to make
+                    general first-aid information easier to access.
+                </p>
+
+
+                <div class="about-features">
+
+                    <span>📱 Mobile friendly</span>
+                    <span>📴 Offline support</span>
+                    <span>💾 Local storage</span>
+                    <span>🔎 Quick search</span>
+                    <span>❤️ Favorites</span>
+                    <span>🧠 Quiz</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="disclaimer-card">
+
+            <span class="disclaimer-icon">
+                ⚠️
+            </span>
+
+            <div>
+
+                <strong>
+                    Important
+                </strong>
+
+                <p>
+                    This website provides general educational first-aid
+                    information. It is not a replacement for a doctor,
+                    emergency service, or professional medical assessment.
+                    For serious or life-threatening situations, contact
+                    emergency services immediately.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     GUIDE MODAL
+========================================================= -->
+
+<div
+    id="guideModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div
+        class="modal-overlay"
+        onclick="closeModal()"
+    ></div>
+
+
+    <div
+        class="modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
+
+        <button
+            type="button"
+            class="modal-close"
+            onclick="closeModal()"
+            aria-label="Close guide"
+        >
+            ✕
+        </button>
+
+
+        <div class="modal-top">
+
+            <div
+                id="modalIcon"
+                class="modal-icon"
+            >
+                🩹
+            </div>
+
+
+            <button
+                id="favoriteButton"
+                type="button"
+                class="favorite-button"
+                onclick="toggleFavorite()"
+                aria-label="Save guide"
+                title="Save guide"
+            >
+                ♡
+            </button>
+
+        </div>
+
+
+        <span class="section-label">
+            FIRST-AID GUIDE
+        </span>
+
+
+        <h2 id="modalTitle">
+            Guide title
+        </h2>
+
+
+        <p
+            id="modalDescription"
+            class="modal-description"
+        >
+            Guide description
+        </p>
+
+
+        <div class="read-aloud-row">
+
+            <button
+                type="button"
+                class="read-button"
+                onclick="readCurrentGuide()"
+            >
+                🔊 Read aloud
+            </button>
+
+            <button
+                type="button"
+                class="stop-reading-button"
+                onclick="stopReading()"
+            >
+                ■ Stop
+            </button>
+
+        </div>
+
+
+        <div class="steps-heading">
+            <span>✓</span>
+            What to do
+        </div>
+
+
+        <ol
+            id="modalSteps"
+            class="modal-steps"
+        >
+            <!-- Steps generated by JavaScript -->
+        </ol>
+
+
+        <div class="warning-box">
+
+            <div class="warning-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <strong>
+                    When to get help
+                </strong>
+
+                <p id="modalWarning">
+                    Warning information
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="tel:112"
+            class="modal-emergency"
+        >
+            <span>🚨</span>
+
+            <span>
+                Serious emergency? Call 112
+            </span>
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+>
+    <span id="toastIcon">✓</span>
+    <span id="toastMessage">Done</span>
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <a
+                href="#home"
+                class="brand footer-brand"
+            >
+
+                <span class="brand-icon">
+                    🩹
+                </span>
+
+                <span class="brand-text">
+                    <strong>Offline First Aid</strong>
+                    <small>Simple. Useful. Prepared.</small>
+                </span>
+
+            </a>
+
+
+            <div class="footer-links">
+
+                <a href="#guides">
+                    Guides
+                </a>
+
+                <a href="#quick-find">
+                    Quick Find
+                </a>
+
+                <a href="#kit">
+                    Kit
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="currentYear"></span> Offline First Aid
+            </span>
+
+            <span>
+                Educational project
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
